@@ -7,6 +7,7 @@ exports[`Button accent, text, icon 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -38,6 +39,7 @@ exports[`Button accent, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={false}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -68,6 +70,7 @@ exports[`Button accent, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -99,6 +102,7 @@ exports[`Button default color 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -130,6 +134,7 @@ exports[`Button default color 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -177,6 +182,7 @@ exports[`Button disabled 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -208,6 +214,7 @@ exports[`Button onPress 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -239,6 +246,7 @@ exports[`Button onPress 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -268,6 +276,7 @@ exports[`Button primary, text 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -299,6 +308,7 @@ exports[`Button primary, text 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -330,6 +340,7 @@ exports[`Button primary, text, icon 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -361,6 +372,7 @@ exports[`Button primary, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={false}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -391,6 +403,7 @@ exports[`Button primary, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -422,6 +435,7 @@ exports[`Button raised default 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -465,6 +479,7 @@ exports[`Button raised default 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -494,6 +509,7 @@ exports[`Button raised, accent, text 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -538,6 +554,7 @@ exports[`Button raised, accent, text 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -569,6 +586,7 @@ exports[`Button raised, accent, text, icon 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -613,6 +631,7 @@ exports[`Button raised, accent, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={false}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -643,6 +662,7 @@ exports[`Button raised, accent, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -697,6 +717,7 @@ exports[`Button raised, disabled, default 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -728,6 +749,7 @@ exports[`Button raised, primary, text 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -772,6 +794,7 @@ exports[`Button raised, primary, text 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -803,6 +826,7 @@ exports[`Button raised, primary, text, icon 1`] = `
   accessibilityTraits={undefined}
   accessible={true}
   hitSlop={undefined}
+  nativeID={undefined}
   onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
@@ -847,6 +871,7 @@ exports[`Button raised, primary, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={false}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
@@ -877,6 +902,7 @@ exports[`Button raised, primary, text, icon 1`] = `
   <Text
     accessible={true}
     allowFontScaling={true}
+    disabled={false}
     ellipsizeMode="tail"
     style={
       Array [
