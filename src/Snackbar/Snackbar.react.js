@@ -7,44 +7,26 @@ import {ViewPropTypes} from '../utils';
 import Button from '../Button';
 
 const propTypes = {
-  /**
-    * The text message to display.
-    */
+  // The text message to display.
   message: PropTypes.string.isRequired,
-  /**
-    * Whether or not the snackbar is visible.
-    */
+  // Whether or not the snackbar is visible.
   visible: PropTypes.bool.isRequired,
-  /**
-    * The amount of time in milliseconds to show the snackbar.
-    */
+  // The amount of time in milliseconds to show the snackbar.
   timeout: PropTypes.number.isRequired,
-  /**
-    * Callback for when the timeout finishes.
-    */
+  // Callback for when the timeout finishes.
   onRequestClose: PropTypes.func.isRequired,
-  /**
-    * Whether or not there is a bottom navigation on the screen.
-    */
+  // Whether or not there is a bottom navigation on the screen.
   bottomNavigation: PropTypes.bool.isRequired,
-  /**
-    * The function to execute when the action is clicked.
-    */
+  // The function to execute when the action is clicked.
   onActionPress: PropTypes.func,
-  /**
-    * The function to execute when the action is clicked.
-    */
+  // The function to execute when the action is clicked.
   actionText: PropTypes.string,
-  /**
-    * Take a look at the Button component for more details.
-    */
+  // Take a look at the Button component for more details.
   button: PropTypes.shape({
     ...Button.propTypes,
     text: PropTypes.string,
   }),
-  /**
-    * Inline style of snackbar
-    */
+  // Inline style of snackbar
   style: PropTypes.shape({
     container: ViewPropTypes.style,
     message: ViewPropTypes.style,

@@ -34,34 +34,22 @@ const propTypes = {
       }),
     ),
   ]),
-  /**
-    * Called when button is pressed. Text is passed as param
-    */
+  // Called when button is pressed. Text is passed as param
   onPress: PropTypes.func,
-  /**
-    * Called when button is long pressed. Text is passed as param
-    */
+  // Called when button is long pressed. Text is passed as param
   onLongPress: PropTypes.func,
-  /**
-    * Set true if you want to hide action button
-    */
+  // Set true if you want to hide action button
   hidden: PropTypes.bool,
-  /**
-    * If specified it'll be shown before text
-    */
+  // If specified it'll be shown before text
   icon: PropTypes.string,
   /**
     * Leave it empty if you don't want any transition after press. Otherwise, it will be trnasform
     * to another view - depends on transition value.
     */
   transition: PropTypes.oneOf(['toolbar', 'speedDial']),
-  /**
-    * Set ripple color
-    */
+  // Set ripple color
   rippleColor: PropTypes.string,
-  /**
-    * You can overide any style for this button
-    */
+  // You can overide any style for this button
   style: PropTypes.shape({
     container: ViewPropTypes.style,
     icon: Text.propTypes.style,
@@ -352,9 +340,7 @@ class ActionButton extends PureComponent {
       </View>
     );
   };
-  /**
-    * TODO: implement labels for toolbar?
-    */
+  // TODO: implement labels for toolbar?
   renderToolbarLabelAction = (styles, icon, label, name) => {
     const key = this.getActionItemKey({icon, name});
     return (

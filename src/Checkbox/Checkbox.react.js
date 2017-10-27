@@ -7,33 +7,19 @@ import IconToggle from '../IconToggle';
 import RippleFeedback from '../RippleFeedback';
 
 const propTypes = {
-  /**
-    * Text will be shown after Icon
-    */
+  // Text will be shown after Icon
   label: PropTypes.string.isRequired,
-  /**
-    * Value will be returned when onCheck is fired
-    */
+  // Value will be returned when onCheck is fired
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  /**
-    * True if it's check
-    */
+  // True if it's check
   checked: PropTypes.bool,
-  /**
-    * Is checkbox active
-    */
+  // Is checkbox active
   disabled: PropTypes.bool,
-  /**
-    * Will be shown when checked is false
-    */
+  // Will be shown when checked is false
   uncheckedIcon: PropTypes.string,
-  /**
-    * Will be shown when checked is true
-    */
+  // Will be shown when checked is true
   checkedIcon: PropTypes.string,
-  /**
-    * Event that is called when state is changed
-    */
+  // Event that is called when state is changed
   onCheck: PropTypes.func.isRequired,
 };
 const defaultProps = {

@@ -25,9 +25,7 @@ const propTypes = {
   divider: PropTypes.bool,
   onPress: PropTypes.func,
   onPressValue: PropTypes.any,
-  /**
-    * Called when list item is long pressed.
-    */
+  // Called when list item is long pressed.
   onLongPress: PropTypes.func,
   numberOfLines: PropTypes.oneOf([1, 2, 3, 'dynamic']),
   style: PropTypes.object,
@@ -50,9 +48,7 @@ const propTypes = {
   // right side
   rightElement: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   onRightElementPress: PropTypes.func,
-  /**
-     * Children passed into the `ListItem`.
-     */
+  // Children passed into the `ListItem`.
   children: PropTypes.node,
 };
 const defaultProps = {
@@ -101,9 +97,7 @@ function getNumberOfLines(props) {
 
   return numberOfLines || 1;
 }
-/**
-* Please see this: https://material.google.com/components/lists.html#lists-specs
-*/
+// Please see this: https://material.google.com/components/lists.html#lists-specs
 function getListItemHeight(props, state) {
   const {leftElement, dense} = props;
   const {numberOfLines} = state;

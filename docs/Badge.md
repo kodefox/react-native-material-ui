@@ -24,17 +24,11 @@ render() {
 ### API
 ```js
 const propTypes = {
-    /**
-    * The badge will be added relativelty to this node
-    */
+    // The badge will be added relativelty to this node
     children: PropTypes.node,
-    /**
-    * This is the content rendered within the badge
-    */
+    // This is the content rendered within the badge
     text: PropTypes.string,
-    /**
-    * When the icon is set, the content will be <Icon name={icon} /> element
-    */
+    // When the icon is set, the content will be <Icon name={icon} /> element
     icon: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.shape({
@@ -43,9 +37,7 @@ const propTypes = {
             size: PropTypes.number,
         }),
     ]),
-    /**
-    * Just sugar for style={{ container: { width: size, height: size, borderRadius: size / 2 }}}
-    */
+    // Just sugar for style={{ container: { width: size, height: size, borderRadius: size / 2 }}}
     size: PropTypes.number,
 };
 ```

@@ -8,21 +8,13 @@ import {ViewPropTypes} from '../utils';
 import BottomNavigationAction from './BottomNavigationAction.react';
 
 const propTypes = {
-  /**
-    * The key of selected/active tab
-    */
+  // The key of selected/active tab
   active: PropTypes.string,
-  /**
-    * BottomNavigation.Action nodes
-    */
+  // BottomNavigation.Action nodes
   children: PropTypes.node.isRequired,
-  /**
-    * Wether or not the BottomNaviagtion should show
-    */
+  // Wether or not the BottomNaviagtion should show
   hidden: PropTypes.bool,
-  /**
-    * Inline style of bottom navigation
-    */
+  // Inline style of bottom navigation
   style: PropTypes.shape({
     container: ViewPropTypes.style,
   }),

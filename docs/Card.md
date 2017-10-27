@@ -17,13 +17,9 @@ render() {
 ### API
 ```js
 const propTypes = {
-    /**
-    * Called when card is pressed
-    */
+    // Called when card is pressed
     onPress: PropTypes.func,
-    /**
-    * You can override any style for this card
-    */
+    // You can override any style for this card
     style: PropTypes.object,
 };
 ```

@@ -22,42 +22,24 @@ render() {
 ### API
 ```js
 const propTypes = {
-    /**
-    * Indicates if search is active or not
-    */
+    // Indicates if search is active or not
     isSearchActive: PropTypes.bool,
-    /**
-    * When you want to activate search feature you have to pass this object with config of search.
-    */
+    // When you want to activate search feature you have to pass this object with config of search.
     searchable: PropTypes.shape({
-        /**
-        * Called when search text was changed.
-        */
+        // Called when search text was changed.
         onChangeText: PropTypes.func,
-        /**
-        * Called when search was closed.
-        */
+        // Called when search was closed.
         onSearchClosed: PropTypes.func,
-        /**
-        * Called when search was opened.
-        */
+        // Called when search was opened.
         onSearchPressed: PropTypes.func,
-        /**
-        * Called when user press submit button on hw keyboard
-        */
+        // Called when user press submit button on hw keyboard
         onSubmitEditing: PropTypes.func,
-        /**
-        * Will shown as placeholder for search input.
-        */
+        // Will shown as placeholder for search input.
         placeholder: PropTypes.string,
-        /**
-        * Indicates when input should be focused after the search is opened.
-        */
+        // Indicates when input should be focused after the search is opened.
         autoFocus: PropTypes.bool,
     }),
-    /**
-    * You can overide any style for the component via this prop
-    */
+    // You can overide any style for the component via this prop
     style: PropTypes.shape({
         container: Animated.View.propTypes.style,
         leftElementContainer: View.propTypes.style,
@@ -67,9 +49,7 @@ const propTypes = {
         rightElementContainer: View.propTypes.style,
         rightElement: Text.propTypes.style,
     }),
-    /**
-    * Just alias for style={{ rightElement: {}, leftElement: {}}}
-    */
+    // Just alias for style={{ rightElement: {}, leftElement: {}}}
     iconProps: PropTypes.shape({
         size: PropTypes.number,
         color: PropTypes.string,
@@ -86,43 +66,27 @@ const propTypes = {
     * TODO: better to rename to onCenterElementPress
     */
     onPress: PropTypes.func,
-    /**
-    * Will be shown on the left side.
-    */
+    // Will be shown on the left side.
     leftElement: PropTypes.oneOfType([
         PropTypes.element,
         PropTypes.string,
     ]),
-    /**
-    * Called when leftElement was pressed.
-    */
+    // Called when leftElement was pressed.
     onLeftElementPress: PropTypes.func,
-    /**
-    * Will be shown between leftElement and rightElement. Usually use for title.
-    */
+    // Will be shown between leftElement and rightElement. Usually use for title.
     centerElement: PropTypes.oneOfType([
         PropTypes.element,
         PropTypes.string,
     ]),
-    /**
-    * Will be shown on the right side.
-    */
+    // Will be shown on the right side.
     rightElement: PropTypes.oneOfType([
-        /**
-        * Whatever you want to have on the right side
-        */
+        // Whatever you want to have on the right side
         PropTypes.element,
-        /**
-        * One action (name of icon). Alias for ['icon1'].
-        */
+        // One action (name of icon). Alias for ['icon1'].
         PropTypes.string,
-        /**
-        * For many actions: ['icon1', 'icon2', ...]
-        */
+        // For many actions: ['icon1', 'icon2', ...]
         PropTypes.arrayOf(PropTypes.string),
-        /**
-        * For actions and menu. The menu will be shown as last one icon.
-        */
+        // For actions and menu. The menu will be shown as last one icon.
         PropTypes.shape({
             actions: PropTypes.arrayOf(
                 PropTypes.oneOfType([
@@ -136,9 +100,7 @@ const propTypes = {
             }),
         }),
     ]),
-    /**
-    * Called when rightElement was pressed.
-    */
+    // Called when rightElement was pressed.
     onRightElementPress: PropTypes.func,
 };
 ```

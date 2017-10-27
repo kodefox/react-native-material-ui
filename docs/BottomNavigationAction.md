@@ -44,25 +44,15 @@ render() {
 ### API
 ```js
 const propTypes = {
-    /**
-    * Will be rendered above the label as a content of the action.
-    */
+    // Will be rendered above the label as a content of the action.
     icon: PropTypes.string.isRequired,
-    /**
-    * Will be rendered under the icon as a content of the action.
-    */
+    // Will be rendered under the icon as a content of the action.
     label: PropTypes.string,
-    /**
-    * True if the action is active (for now it'll be highlight by primary color)
-    */
+    // True if the action is active (for now it'll be highlight by primary color)
     active: PropTypes.bool.isRequired,
-    /**
-    * Callback for on press event.
-    */
+    // Callback for on press event.
     onPress: PropTypes.func,
-    /**
-    * Inline style of bottom navigation
-    */
+    // Inline style of bottom navigation
     style: PropTypes.shape({
         container: View.propTypes.style,
         active: Text.propTypes.style,

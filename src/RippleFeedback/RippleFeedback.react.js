@@ -10,9 +10,7 @@ import {
 /* eslint-enable import/no-unresolved, import/extensions */
 
 const propTypes = {
-  /**
-    * The color of the underlay that will show when the touch is active.
-    */
+  // The color of the underlay that will show when the touch is active.
   color: PropTypes.string,
   borderless: PropTypes.bool,
   children: PropTypes.node.isRequired,

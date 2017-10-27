@@ -17,37 +17,21 @@ import Icon from '../Icon';
 
 const propTypes = {
   color: PropTypes.string,
-  /**
-    * The color of the underlay that will show when the touch is active.
-    */
+  // The color of the underlay that will show when the touch is active.
   underlayColor: PropTypes.string,
-  /**
-    * Max opacity of ripple effect
-    */
+  // Max opacity of ripple effect
   maxOpacity: PropTypes.number,
-  /**
-    * Size of underlayColor
-    */
+  // Size of underlayColor
   percent: PropTypes.number,
-  /**
-    * If true, the interaction will be forbidden
-    */
+  // If true, the interaction will be forbidden
   disabled: PropTypes.bool,
-  /**
-    * Size of icon (default is 24 - see spacing in palette)
-    */
+  // Size of icon (default is 24 - see spacing in palette)
   size: PropTypes.number,
-  /**
-    * Name of icon to show
-    */
+  // Name of icon to show
   name: PropTypes.string.isRequired,
-  /**
-    * It'll be used instead of icon (see props name) if exists
-    */
+  // It'll be used instead of icon (see props name) if exists
   children: PropTypes.element,
-  /**
-    * Call when icon was pressed
-    */
+  // Call when icon was pressed
   onPress: PropTypes.func,
 };
 const defaultProps = {
@@ -95,9 +79,7 @@ function getStyles(props, context, state) {
     ],
   };
 }
-/**
-* Returns size of icon. Priority order: style prop, size prop, spacing.iconSize.
-*/
+// Returns size of icon. Priority order: style prop, size prop, spacing.iconSize.
 function getIconSize(props, context) {
   const {spacing} = context.uiTheme;
   const {icon} = props.style;
