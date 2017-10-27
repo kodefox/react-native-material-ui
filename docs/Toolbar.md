@@ -1,12 +1,12 @@
 # [Toolbar](https://material.google.com/components/toolbars.html)
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/toolbars-1.png" width="280">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/toolbars-anim-1.gif" width="280">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/toolbars-1.png" width="280">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/toolbars-anim-1.gif" width="280">
 
 ### Usage
 
 ```js
 ...
-import { Toolbar } from '../react-native-material-ui';
+import { Toolbar } from '../react-native-mui';
 ...
 render() {
       <Toolbar

@@ -1,11 +1,11 @@
 # [Button](https://material.google.com/components/buttons.html)
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/buttons-1.jpg" height="560">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/buttons-1.jpg" height="560">
 
 ### Usage
 
 ```js
 ...
-import { Button } from 'react-native-material-ui';
+import { Button } from 'react-native-mui';
 ...
 render() {
     <View>

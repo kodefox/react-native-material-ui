@@ -1,11 +1,11 @@
 # Badge
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/badge-2.png" width="320">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/badge-2.png" width="320">
 
 ### Usage
 
 ```js
 ...
-import { Badge, Icon, Avatar } from '../react-native-material-ui';
+import { Badge, Icon, Avatar } from '../react-native-mui';
 ...
 render() {
   <Badge text="3" >

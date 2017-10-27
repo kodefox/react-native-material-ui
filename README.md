@@ -2,17 +2,17 @@
 # React Native Material UI (iOS and Android supported)
 **Highly customizable material design components for React Native!**
 
-[![npm](https://img.shields.io/npm/v/react-native-material-ui.svg)](https://www.npmjs.com/package/react-native-material-ui)
-[![codecov](https://codecov.io/gh/xotahal/react-native-material-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/xotahal/react-native-material-ui)
-[![npm](https://img.shields.io/npm/dm/react-native-material-ui.svg)](https://img.shields.io/npm/dm/react-native-material-ui.svg)
-[![GitHub issues](https://img.shields.io/github/issues/xotahal/react-native-material-ui.svg)](https://github.com/xotahal/react-native-material-ui/issues)
-[![Dependencies](https://david-dm.org/xotahal/react-native-material-ui.svg)](https://david-dm.org/xotahal/react-native-material-ui.svg)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/xotahal/react-native-material-ui/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/react-native-mui.svg)](https://www.npmjs.com/package/react-native-mui)
+[![codecov](https://codecov.io/gh/kodefox/react-native-mui/branch/master/graph/badge.svg)](https://codecov.io/gh/kodefox/react-native-mui)
+[![npm](https://img.shields.io/npm/dm/react-native-mui.svg)](https://img.shields.io/npm/dm/react-native-mui.svg)
+[![GitHub issues](https://img.shields.io/github/issues/kodefox/react-native-mui.svg)](https://github.com/kodefox/react-native-mui/issues)
+[![Dependencies](https://david-dm.org/kodefox/react-native-mui.svg)](https://david-dm.org/kodefox/react-native-mui.svg)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kodefox/react-native-mui/master/LICENSE)
 
 
 # Getting Started
 ```bash
-$ npm i react-native-material-ui --save
+$ npm i react-native-mui --save
 ```
 
 ## Setting of vector icons
@@ -44,7 +44,7 @@ Here is a great tutorial which shows [how to add custom fonts](https://medium.co
 
 # Usage
 
-To achieve the level of customizability, React Native Material UI is using a single JS object called uiTheme that is passed in via context. By default, this uiTheme object is based on the lightTheme that you can find [here](https://github.com/xotahal/react-native-material-ui/blob/master/src/styles/themes/light.js). So, you can change almost everything very easily.
+To achieve the level of customizability, React Native Material UI is using a single JS object called uiTheme that is passed in via context. By default, this uiTheme object is based on the lightTheme that you can find [here](https://github.com/kodefox/react-native-mui/blob/master/src/styles/themes/light.js). So, you can change almost everything very easily.
 
 The uiTheme object contains the following keys:
 
@@ -67,7 +67,7 @@ The uiTheme object contains the following keys:
 import React, { Component } from 'react';
 import { Navigator, NativeModules } from 'react-native';
 
-import { COLOR, ThemeProvider } from '../react-native-material-ui';
+import { COLOR, ThemeProvider } from '../react-native-mui';
 
 // you can set your style right here, it'll be propagated to application
 const uiTheme = {
@@ -123,33 +123,33 @@ Of course, sometimes we need to change style of only one component. It means, al
 ```
 # Animations are included
 
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/action-button-labels.gif" width="285">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/fab-to-toolbar-1.gif" width="285">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/bottom-navigation-anim.gif" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/action-button-labels.gif" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/fab-to-toolbar-1.gif" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/bottom-navigation-anim.gif" width="285">
 
 Note: You have to allow the animations for Android ([see React Native's documentation](http://facebook.github.io/react-native/releases/0.33/docs/animations.html#layoutanimation))
 ```js
-UIManager.setLayoutAnimationEnabledExperimental && 
+UIManager.setLayoutAnimationEnabledExperimental &&
 UIManager.setLayoutAnimationEnabledExperimental(true);
 ```
 # Themes are supported
 
 
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/buttons-2.png" width="285">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/buttons-3.png" width="285">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/buttons-4.png" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/buttons-2.png" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/buttons-3.png" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/buttons-4.png" width="285">
 
 # Toolbar with search feature
 
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/toolbars-search.gif" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/toolbars-search.gif" width="285">
 
 # Examples
 
-You can try our [Demo App](https://github.com/xotahal/react-native-material-ui-demo-app)!
+You can try our [Demo App](https://github.com/kodefox/react-native-mui-demo-app)!
 
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/toolbars-1.png" width="280">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/toolbars-anim-1.gif" width="280">
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/bottom-navigation-1.gif" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/toolbars-1.png" width="280">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/toolbars-anim-1.gif" width="280">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/bottom-navigation-1.gif" width="285">
 
 ![Example 1](https://raw.githubusercontent.com/react-native-material-design/demo-app/master/resources/examples-1.jpg "Example 1")
 ![Example 2](https://raw.githubusercontent.com/react-native-material-design/demo-app/master/resources/examples-2.jpg "Example 2")
@@ -161,14 +161,14 @@ You can try our [Demo App](https://github.com/xotahal/react-native-material-ui-d
 
 Here is a list of all component included in this library. (I'm working on documentation for every each component. Be patient please :))
 
-- [Action Button](https://github.com/xotahal/react-native-material-ui/blob/master/docs/ActionButton.md)
-- [Avatar](https://github.com/xotahal/react-native-material-ui/blob/master/docs/Avatar.md)
-- [Badge](https://github.com/xotahal/react-native-material-ui/blob/master/docs/Badge.md)
-- [Bottom Navigation](https://github.com/xotahal/react-native-material-ui/blob/master/docs/BottomNavigation.md)
-- [Button](https://github.com/xotahal/react-native-material-ui/blob/master/docs/Button.md)
-- [Card](https://github.com/xotahal/react-native-material-ui/blob/master/docs/Card.md)
+- [Action Button](https://github.com/kodefox/react-native-mui/blob/master/docs/ActionButton.md)
+- [Avatar](https://github.com/kodefox/react-native-mui/blob/master/docs/Avatar.md)
+- [Badge](https://github.com/kodefox/react-native-mui/blob/master/docs/Badge.md)
+- [Bottom Navigation](https://github.com/kodefox/react-native-mui/blob/master/docs/BottomNavigation.md)
+- [Button](https://github.com/kodefox/react-native-mui/blob/master/docs/Button.md)
+- [Card](https://github.com/kodefox/react-native-mui/blob/master/docs/Card.md)
 - Checkbox
-- [Dialog](https://github.com/xotahal/react-native-material-ui/blob/master/docs/Dialog.md)
+- [Dialog](https://github.com/kodefox/react-native-mui/blob/master/docs/Dialog.md)
 - Divider
 - Drawer
 - Icon
@@ -176,4 +176,4 @@ Here is a list of all component included in this library. (I'm working on docume
 - List item
 - Radio button
 - Subheader
-- [Toolbar](https://github.com/xotahal/react-native-material-ui/blob/master/docs/Toolbar.md)
+- [Toolbar](https://github.com/kodefox/react-native-mui/blob/master/docs/Toolbar.md)

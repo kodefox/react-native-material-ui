@@ -1,11 +1,11 @@
 # [Dialog](https://material.google.com/components/dialogs.html#dialogs-behavior)
-<img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/dialogs-2.png" width="285">
+<img src="https://raw.githubusercontent.com/kodefox/react-native-mui-demo-app/master/resources/dialogs-2.png" width="285">
 
 ### Usage
 
 ```js
 ...
-import { Dialog, DialogDefaultActions } from '../react-native-material-ui';
+import { Dialog, DialogDefaultActions } from '../react-native-mui';
 ...
 render() {
     <View>
