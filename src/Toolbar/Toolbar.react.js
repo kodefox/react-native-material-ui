@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved, import/extensions */
 import React, {PureComponent} from 'react';
+import autobind from 'autobind';
 import PropTypes from 'prop-types';
 import {Animated, Easing, Platform, StyleSheet, Text, View} from 'react-native';
 import {ViewPropTypes, BackAndroid} from '../utils';
@@ -46,10 +47,8 @@ const propTypes = {
   size: PropTypes.number,
   // Wether or not the Toolbar should show
   hidden: PropTypes.bool,
-  /**
-    * Called when centerElement was pressed.
-    * TODO: better to rename to onCenterElementPress
-    */
+  // Called when centerElement was pressed.
+  // TODO: better to rename to onCenterElementPress
   onPress: PropTypes.func,
   // Will be shown on the left side.
   leftElement: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
@@ -97,9 +96,6 @@ const contextTypes = {
   uiTheme: PropTypes.object.isRequired,
 };
 
-const getBackButtonListener = callback =>
-  BackAndroid.addEventListener('hardwareBackPress', callback);
-
 // const isSearchable = props => (props.searchable && props.isSearchActive) || false;
 // const getIsSearchActive = (props, state) => (props.searchable && state.isSearchActive) || false;
 
@@ -112,13 +108,12 @@ function getStyles(props, context) {
 }
 
 class Toolbar extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super(...arguments);
+    autobind(this);
 
-    const isSearchActive = props.isSearchActive || false;
-    this.backButtonListener = isSearchActive
-      ? getBackButtonListener(this.onSearchCloseRequested)
-      : null;
+    const isSearchActive = this.props.isSearchActive || false;
+    BackAndroid.addEventListener('hardwareBackPress', this._onBackPress);
 
     this.state = {
       // indicates if searc is activated
@@ -136,13 +131,17 @@ class Toolbar extends PureComponent {
       positionValue: new Animated.Value(0),
     };
   }
+
+  componentWillUnmount() {
+    BackAndroid.removeEventListener('hardwareBackPress', this._onBackPress);
+  }
+
   componentWillReceiveProps(nextProps) {
     // if search is active and we clicked on the results which does not allow search
     // then close the previous search.
     if (this.state.isSearchActive && !nextProps.searchable) {
       this.onSearchCloseRequested();
     }
-
     // there should be also posibility to change search through props, so we need to check
     // props first and then we should check state if we need to change search state
     if (this.props.isSearchActive !== nextProps.isSearchActive) {
@@ -157,7 +156,6 @@ class Toolbar extends PureComponent {
         }
       }
     }
-
     // if hidden prop is changed we animate show or hide
     if (nextProps.hidden !== this.props.hidden) {
       if (nextProps.hidden === true) {
@@ -167,24 +165,29 @@ class Toolbar extends PureComponent {
       }
     }
   }
-  onSearchOpenRequested = () => {
+
+  _onBackPress() {
+    if (this.state.isSearchActive) {
+      this.onSearchCloseRequested();
+      return true;
+    }
+    return false;
+  }
+
+  onSearchOpenRequested() {
     this.setState({
       isSearchActive: true,
       searchValue: '',
       // zIndex: 'toDefaultNext',
     });
-
     this.animateSearchBackground(() => {
       // default scale set up back to "hidden" value
       this.state.defaultScaleValue.setValue(0.01);
       this.setState({order: 'searchFirst'});
-      // on android it's typical that back button closes search input on toolbar
-      this.backButtonListener = getBackButtonListener(
-        this.onSearchCloseRequested,
-      );
     });
-  };
-  onSearchPressed = () => {
+  }
+
+  onSearchPressed() {
     this.onSearchOpenRequested();
 
     const {searchable} = this.props;
@@ -192,8 +195,9 @@ class Toolbar extends PureComponent {
     if (searchable && isFunction(searchable.onSearchPressed)) {
       searchable.onSearchPressed();
     }
-  };
-  onSearchTextChanged = (value) => {
+  }
+
+  onSearchTextChanged(value) {
     const {searchable} = this.props;
 
     if (searchable && isFunction(searchable.onChangeText)) {
@@ -201,39 +205,33 @@ class Toolbar extends PureComponent {
     }
 
     this.setState({searchValue: value});
-  };
-  onSearchClearRequested = () => {
+  }
+
+  onSearchClearRequested() {
     this.onSearchTextChanged('');
-  };
-  // Android's HW/SW back button
-  onSearchCloseRequested = () => {
+  }
+
+  onSearchCloseRequested() {
     this.setState({
       isSearchActive: false,
       searchValue: '',
     });
-
     this.animateDefaultBackground(() => {
       // default scale set up back to "hidden" value
       this.state.searchScaleValue.setValue(0.01);
       this.setState({order: 'defaultFirst'});
-
       this.onSearchClosed();
     });
+  }
 
-    return true; // because we need to stop propagation
-  };
-  onSearchClosed = () => {
+  onSearchClosed() {
     const {searchable} = this.props;
-
-    if (this.backButtonListener) {
-      this.backButtonListener.remove();
-    }
-
     if (searchable && isFunction(searchable.onSearchClosed)) {
       searchable.onSearchClosed();
     }
-  };
-  onLayout = (event) => {
+  }
+
+  onLayout(event) {
     const {width, height} = event.nativeEvent.layout;
 
     // pythagorean
@@ -253,27 +251,31 @@ class Toolbar extends PureComponent {
       radius: diameter / 2,
       diameter,
     });
-  };
-  animateSearchBackground = (onComplete) => {
+  }
+
+  animateSearchBackground(onComplete) {
     Animated.timing(this.state.searchScaleValue, {
       toValue: 1,
       duration: 325,
       easing: Easing.bezier(0.0, 0.0, 0.2, 1),
       useNativeDriver: Platform.OS === 'android',
     }).start(onComplete);
-  };
-  animateDefaultBackground = (onComplete) => {
+  }
+
+  animateDefaultBackground(onComplete) {
     Animated.timing(this.state.defaultScaleValue, {
       toValue: 1,
       duration: 325,
       easing: Easing.bezier(0.0, 0.0, 0.2, 1),
       useNativeDriver: Platform.OS === 'android',
     }).start(onComplete);
-  };
+  }
+
   focusSearchField() {
     this.searchFieldRef.focus();
   }
-  show = () => {
+
+  show() {
     const {moveAnimated} = this.state;
     Animated.timing(moveAnimated, {
       toValue: 0,
@@ -281,8 +283,9 @@ class Toolbar extends PureComponent {
       easing: Easing.bezier(0.0, 0.0, 0.2, 1),
       useNativeDriver: Platform.OS === 'android',
     }).start();
-  };
-  hide = () => {
+  }
+
+  hide() {
     const {moveAnimated} = this.state;
     const styles = getStyles(this.props, this.context, this.state);
     Animated.timing(moveAnimated, {
@@ -291,8 +294,9 @@ class Toolbar extends PureComponent {
       easing: Easing.bezier(0.4, 0.0, 0.6, 1),
       useNativeDriver: Platform.OS === 'android',
     }).start();
-  };
-  renderAnimatedBackgrounds = (styles) => {
+  }
+
+  renderAnimatedBackgrounds(styles) {
     const {
       diameter,
       bgPosition,
@@ -351,7 +355,8 @@ class Toolbar extends PureComponent {
     }
 
     return <View style={StyleSheet.absoluteFill}>{content}</View>;
-  };
+  }
+
   render() {
     const {onLeftElementPress, onPress, onRightElementPress} = this.props;
 
