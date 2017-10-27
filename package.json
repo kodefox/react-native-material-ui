@@ -4,8 +4,9 @@
   "description": "React Native Material Design Components",
   "main": "./index.js",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint ./"
+    "test-src": "jest",
+    "lint": "eslint ./",
+    "test": "yarn lint && yarn test-src"
   },
   "repository": {
     "type": "git",
