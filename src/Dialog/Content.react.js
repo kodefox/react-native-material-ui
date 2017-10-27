@@ -1,42 +1,35 @@
 /* eslint-disable import/no-unresolved, import/extensions */
-import { View } from 'react-native';
-import React, { PureComponent } from 'react';
+import {View} from 'react-native';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 const propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 const defaultProps = {
-    style: {},
+  style: {},
 };
 const contextTypes = {
-    uiTheme: PropTypes.object.isRequired,
+  uiTheme: PropTypes.object.isRequired,
 };
 
 function getStyles(props, context) {
-    const { dialog } = context.uiTheme;
+  const {dialog} = context.uiTheme;
 
-    return {
-        contentContainer: [
-            dialog.contentContainer,
-            props.style.contentContainer,
-        ],
-    };
+  return {
+    contentContainer: [dialog.contentContainer, props.style.contentContainer],
+  };
 }
 
 class DialogContent extends PureComponent {
-    render() {
-        const { children } = this.props;
+  render() {
+    const {children} = this.props;
 
-        const styles = getStyles(this.props, this.context);
+    const styles = getStyles(this.props, this.context);
 
-        return (
-            <View style={styles.contentContainer}>
-                {children}
-            </View>
-        );
-    }
+    return <View style={styles.contentContainer}>{children}</View>;
+  }
 }
 
 DialogContent.propTypes = propTypes;
